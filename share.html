@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Ideas - Startup2Gether</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Share Your Ideas</h1>
+        <nav>
+            <ul>
+                <li><a href="project1.html">Home</a></li>
+                <li><a href="share.html">Share Ideas</a></li>
+                <li><a href="another.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="idea-submission">
+            <h2>Submit Your Idea</h2>
+            <form id="ideaForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="idea">Your Idea:</label>
+                <textarea id="idea" name="idea" rows="5" required></textarea>
+
+                <button type="submit">Submit Idea</button>
+                
+            </form>
+
+           
+            <div id="thankYouMessage" style="display:none; color: green; font-size: 18px; text-align: center; margin-top: 20px;">
+                <p>Thank you, your response has been noted. Our team will contact you within 48 hours.</p>
+            </div>
+        </section>
+
+        <section class="ideas-list">
+            <h2>Recent Ideas</h2>
+            <ul>
+                <li><strong>Smart Grocery List App</strong> - A collaborative app to help users manage grocery lists and share shopping tips.</li>
+                <li><strong>Eco-Friendly Packaging</strong> - An innovative approach to sustainable packaging solutions for small businesses.</li>
+                <li><strong>Online Learning Hub</strong> - A platform that connects mentors and learners in various fields.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Startup2Gether. All rights reserved.</p>
+    </footer>
+
+    >
+    <script>
+        document.getElementById('ideaForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const idea = document.getElementById('idea').value;
+
+            if (name && email && idea) {
+                
+                document.getElementById('thankYouMessage').style.display = 'block';
+
+               
+                document.getElementById('ideaForm').reset();
+            } else {
+                alert("Please fill in all fields before submitting.");
+            }
+        })
+    </script>
+</body>
+</html>
